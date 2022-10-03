@@ -1,12 +1,3 @@
-/* Desenvolva sua lógica aqui */
-/*<li class="card flex space center">
-                <p>R$ 00,00</p>
-                <div class="id-remove flex space center">
-                    <p class="tipo">Entrada</p>
-                    <button id="remove"><i class="fa-solid fa-trash-can"></i></button>                
-                </div>
-</li>
-*/
 let formatoMoeda = { minimumFractionDigits: 2 , style: 'currency', currency: 'BRL' }
 
 let countId = 0
@@ -61,3 +52,22 @@ function listCards(){
 
 }
 
+
+function filterByTypeEntry(){
+    let buttonBytype = document.querySelectorAll('.button-topic')
+    for (let i = 0; i<buttonBytype.length; i++){
+        let buttonCurrent = buttonBytype[i]
+        buttonCurrent.addEventListener('click', (event)=>{
+            let buttonclick = event.target
+            console.log(buttonclick)
+            let catID = buttonclick.id
+            let idtf = catID.substring(3)
+            console.log(idtf)
+
+            const entryFilters = insertedValues.filter((obj)=>{obj.categoryID === idtf})
+            console.log(entryFilters)
+        })
+    }
+    
+}
+filterByTypeEntry()

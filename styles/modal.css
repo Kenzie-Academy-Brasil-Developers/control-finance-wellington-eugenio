@@ -7,6 +7,7 @@
     background-color: var( --color-grey-1-opacity-5);
     position: fixed;
     top: 0;
+    animation: showmodal 1s ease;
 }
 .modal-container {
     width:  428px;
@@ -101,4 +102,13 @@
    gap: 15px;
    margin-top: 15px;;
 }
-
+@keyframes showmodal {
+    0%{
+        opacity: 0;
+        transform: translateY(-50%);
+    }
+    100%{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

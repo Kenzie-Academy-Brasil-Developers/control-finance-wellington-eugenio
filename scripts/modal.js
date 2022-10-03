@@ -1,4 +1,3 @@
-/* Desenvolva sua lógica aqui */
 function createModal(){
     const modalCorp       = document.createElement('div');
     modalCorp.classList   = 'modal';
@@ -102,6 +101,7 @@ function createModal(){
                 newEntry[entry.name] = entry.value
             }
         })
+        console.log(newEntry)
         insertedValues.push(newEntry)
         listCards()
         some += parseInt(newEntry.value)
@@ -150,35 +150,3 @@ function exitModal(){
 }
 
 showModal()
-
-/*<div class="modal">
-<section class="modal-container flex column space">
-<div class="modal-reader flex space center">
-    <h3 class="modal-title">Registro de valor</h3>
-    <button class="exit" id="ex">X</button>
-</div>
-<p>Digite o valor e em 
-    seguida aperte no botão referente
-    ao tipo do valor
-</p>
-<form class="modal-form flex column space" action="">
-    <label  class="label-enti" for="">Valor</label>
-    <div class="value-in flex center">
-        <p>R$</p>
-        <input class="input-valor" type="text" placeholder="00,00">
-    </div>
-    <div class="modal-tipo flex center">
-        <p>Tipo de valor</p>
-        <input class="input-radio" type="radio" name="option" id="entrada" value="1">
-        <label class="input-radio-name" for="entrada">Entrada</label>
-        <input class="input-radio" type="radio" name="option" id="saida" value="2">
-        <label class="input-radio-name" for="saida">Saída</label>               
-    </div>
-    <div class="modal-actions flex center">
-        <button class="button-cancel" id="ex" >Cancelar</button>
-        <button class="button-insert" type="submit" id="insert">Inserir valor</button>
-    </div>    
-</form>     
-</section>
-</div>*/
-
