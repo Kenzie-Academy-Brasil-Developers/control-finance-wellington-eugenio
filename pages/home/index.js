@@ -62,10 +62,10 @@ function filterByTypeEntry(){
             console.log(buttonclick)
             let catID = buttonclick.id
             let idtf = catID.substring(3)
-            console.log(idtf)
+            
 
             const entryFilters = insertedValues.filter((obj)=>{obj.categoryID === idtf})
-            console.log(entryFilters)
+        
         })
     }
     

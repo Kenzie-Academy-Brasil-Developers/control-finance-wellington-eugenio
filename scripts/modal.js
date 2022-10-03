@@ -101,7 +101,6 @@ function createModal(){
                 newEntry[entry.name] = entry.value
             }
         })
-        console.log(newEntry)
         insertedValues.push(newEntry)
         listCards()
         some += parseInt(newEntry.value)
