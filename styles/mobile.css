@@ -1,0 +1,68 @@
+@media(max-width:400px){
+    .navbar {
+        width: 100vw;
+        min-width: 100vw;
+        max-width: 100%;
+        height: 132px;
+        flex-direction: column;
+        position:fixed;
+        top: 0;
+    }
+    .container {
+        max-width:375px;
+        flex-direction: column;
+        width: 375px;
+        height: 132px;
+        justify-content: center;
+        align-items: flex-start;
+        padding-left: 15px;
+        gap: 15px;
+
+    }
+    .new-entry{
+        width: 343px;
+    }
+    .main-container{
+        max-width: 35rem;
+    }
+    .header-select{
+        max-width: 375px;
+        align-items: flex-start;
+        flex-direction: column;
+        padding-left: 15px;
+        gap: 15px;
+        height: 250px;
+        margin-bottom: 60px;
+    }
+   .some{
+    max-width: 375px;
+    width: 90%;
+    padding-left: 10px;
+    margin-left: 8px;
+   }
+   .list-entries{
+    max-width: 375px;
+    width: 90%;
+    padding-left: 10px;
+    margin-left: 8px;
+   }
+   .card{
+    max-width: 375px;
+    width: 90%;
+   }
+   .modal-container{
+    max-width: 343px;
+    height: 432px;
+   }
+   .value-in{
+    width: 295px;
+   }
+   .modal-tipo{
+    flex-direction: column;
+    width: 295px;
+   }
+   .input-radio-name{
+    max-width: 80%;
+    width: 80%;
+   }
+}
