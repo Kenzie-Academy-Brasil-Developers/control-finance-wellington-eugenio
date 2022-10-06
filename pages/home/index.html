@@ -25,17 +25,15 @@
     <main id="app" class="main-container">
         <header class="header-select flex space center">
             <h2>Resumo financeiro</h2>
-            <div class="buttons-section flex space center">
-                <button class="button-topic" id="all">Todos</button>
-                <button class="button-topic" id="bt-Entrada">Entradas</button>
-                <button class="button-topic" id="bt-Saida">Saídas</button>
-            </div>
+            <ul class="buttons-section flex space center" id="cat-ul">
+                
+            </ul>
         </header>
         <div class="some flex space center">
             <h3 class="text-some">Soma dos valores</h3>
             <p class="text-some" id="total">R$ 00,00</p>
         </div>
-        <ul class="list-entries flex column">
+        <ul class="list-entries flex column" id="list-entry">
             
         </ul>
     </main>
@@ -43,5 +41,6 @@
     <script src="../../scripts/modal.js"></script>
     <script src="valuesData.js"></script>
     <script src="index.js"></script>
+    <script src="../../scripts/filter.js"></script>
 </body>
 </html>

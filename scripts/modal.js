@@ -35,7 +35,7 @@ function createModal(){
     inputText.innerText   = 'R$';
 
     const inputForm       = document.createElement('input');
-    inputForm.type        = 'text';
+    inputForm.type        = 'number';
     inputForm.name        = 'value';
     inputForm.classList   = 'input-valor';
     inputForm.required    = true
@@ -102,9 +102,8 @@ function createModal(){
             }
         })
         insertedValues.push(newEntry)
-        listCards()
-        some += parseInt(newEntry.value)
-        document.querySelector('#total').innerHTML = some.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+        listCards(insertedValues)
+        renderSome(insertedValues)
         modalCorp.remove()
         
     })

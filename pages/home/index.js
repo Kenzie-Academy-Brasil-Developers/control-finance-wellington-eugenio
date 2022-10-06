@@ -29,9 +29,8 @@ function createCards(objeto){
     cardbutton.addEventListener('click',(event)=>{
         let li = event.path[3]
         li.remove()
-        some -= valorDocard
-        document.querySelector('#total').innerHTML = some.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
         insertedValues.splice(idObjeto, 1)
+        renderSome(insertedValues)
     })
     
     cardcontai.append(cardType, cardbutton)
@@ -43,31 +42,52 @@ function createCards(objeto){
 
 const cardMain = document.querySelector('.list-entries')
 
-function listCards(){  
+function listCards(arr){  
     cardMain.innerHTML = ""
-    insertedValues.forEach((obj)=>{
+    arr.forEach((obj)=>{
         let objAtual = createCards(obj)
         cardMain.appendChild(objAtual)
     })
 
 }
 
+function renderCategories(arr){
+    const listCat = document.getElementById('cat-ul')
 
-function filterByTypeEntry(){
-    let buttonBytype = document.querySelectorAll('.button-topic')
-    for (let i = 0; i<buttonBytype.length; i++){
-        let buttonCurrent = buttonBytype[i]
-        buttonCurrent.addEventListener('click', (event)=>{
-            let buttonclick = event.target
-            console.log(buttonclick)
-            let catID = buttonclick.id
-            let idtf = catID.substring(3)
-            
-
-            const entryFilters = insertedValues.filter((obj)=>{obj.categoryID === idtf})
-        
-        })
-    }
-    
+    arr.forEach((cat)=>{
+        const name = createCat(cat)
+        listCat.appendChild(name)
+    })
 }
-filterByTypeEntry()
+
+function createCat(item){
+    const li = document.createElement('li')
+    const name = document.createElement('p')
+    
+    li.classList = 'button-topic'
+    name.classList = 'cat-name'
+
+    name.innerText = item
+
+    li.appendChild(name)
+
+    return li;
+}
+
+renderCategories(entryType)
+
+function renderSome(arr){
+    const somaloc = document.querySelector('#total')
+
+    const valueSome = recudeSome(arr)
+
+    somaloc.innerHTML = valueSome.toLocaleString('pt-br', formatoMoeda)
+}
+
+function recudeSome(arr){
+    const soma = arr.reduce((acumulador, currentValue)=>{
+        return acumulador + parseInt(currentValue.value)
+    }, 0)
+    return soma
+}
+
